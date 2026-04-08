@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>팀 업무 관리 대시보드</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Team Dashboard</p>
+        <h1>팀 업무 관리 대시보드</h1>
+        <p class="hero-copy">JSON 데이터를 불러와 업무 현황을 한눈에 확인할 수 있는 로컬 실행용 웹앱입니다.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="loadJsonButton" type="button">JSON 파일 불러오기</button>
+        <input id="jsonFileInput" type="file" accept=".json,application/json" hidden>
+      </div>
+    </header>
+
+    <main>
+      <section class="summary-grid" aria-label="업무 요약">
+        <article class="summary-card">
+          <span class="summary-label">전체 업무 수</span>
+          <strong id="totalCount">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">진행 중</span>
+          <strong id="progressCount">0</strong>
+        </article>
+        <article class="summary-card">
+          <span class="summary-label">완료</span>
+          <strong id="doneCount">0</strong>
+        </article>
+        <article class="summary-card alert-card">
+          <span class="summary-label">지연 업무</span>
+          <strong id="delayCount">0</strong>
+        </article>
+      </section>
+
+      <section class="dashboard-panel reveal-on-scroll" aria-labelledby="dashboardSectionTitle">
+        <div class="dashboard-header">
+          <div>
+            <p class="eyebrow eyebrow-dark">Overview</p>
+            <h2 id="dashboardSectionTitle">전체 업무 현황</h2>
+          </div>
+          <p class="dashboard-caption">전체 기준 집계와 팀별 진행률, 지연 업무를 한 번에 확인합니다.</p>
+        </div>
+
+        <div class="dashboard-layout">
+          <article class="dashboard-card status-overview">
+            <div class="dashboard-card-header">
+              <h3>상태별 현황</h3>
+              <span class="panel-badge" id="dashboardTotalCount">0건</span>
+            </div>
+            <div class="status-stat-list">
+              <div class="status-stat-item">
+                <span class="status-stat-label">진행 중</span>
+                <strong id="dashboardProgressCount">0</strong>
+              </div>
+              <div class="status-stat-item">
+                <span class="status-stat-label">완료</span>
+                <strong id="dashboardDoneCount">0</strong>
+              </div>
+              <div class="status-stat-item delay">
+                <span class="status-stat-label">지연</span>
+                <strong id="dashboardDelayCount">0</strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="dashboard-card team-overview">
+            <div class="dashboard-card-header">
+              <h3>팀별 진행률</h3>
+            </div>
+            <div id="teamProgressBoard" class="team-progress-board"></div>
+          </article>
+
+          <article class="dashboard-card delay-overview">
+            <div class="dashboard-card-header">
+              <h3>지연 업무 강조</h3>
+              <span class="panel-badge" id="highlightDelayCount">0건</span>
+            </div>
+            <div id="delayHighlightList" class="delay-highlight-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel panel-card reveal-on-scroll" aria-labelledby="reportSectionTitle">
+        <div class="panel-header">
+          <h2 id="reportSectionTitle">업무 보고서 생성</h2>
+          <span class="panel-badge">텍스트 출력</span>
+        </div>
+        <div class="table-wrap">
+          <div class="toolbar-block">
+            <div class="filter-grid report-grid">
+              <label class="field-label">
+                시작일
+                <input id="reportStartDate" type="date" class="field-control">
+              </label>
+              <label class="field-label">
+                종료일
+                <input id="reportEndDate" type="date" class="field-control">
+              </label>
+              <button id="generateReportButton" type="button" class="primary-button">보고서 생성</button>
+              <button id="copyReportButton" type="button" class="ghost-button">복사하기</button>
+            </div>
+          </div>
+          <div class="toolbar-block compact-top">
+            <textarea
+              id="reportOutput"
+              rows="14"
+              readonly
+              placeholder="보고서 생성 버튼을 누르면 팀별 업무 보고서가 표시됩니다."
+              class="report-output"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section id="messageBox" class="message-box" aria-live="polite">
+        `data.json` 자동 불러오기를 시도합니다. 브라우저 보안 정책으로 실패하면 위 버튼으로 같은 폴더의 파일을 선택해 주세요.
+      </section>
+
+      <section class="panel panel-emphasis reveal-on-scroll" aria-labelledby="delaySectionTitle">
+        <div class="panel-header">
+          <h2 id="delaySectionTitle">지연 업무</h2>
+          <span class="panel-badge" id="delayPanelCount">0건</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>제목</th>
+                <th>담당자</th>
+                <th>팀</th>
+                <th>상태</th>
+                <th>진행률</th>
+              </tr>
+            </thead>
+            <tbody id="delayTaskBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="aiSummarySection" class="panel panel-card reveal-on-scroll" aria-labelledby="aiSummaryTitle" style="display: none;">
+        <div class="panel-header">
+          <h2 id="aiSummaryTitle">셀별 업무 요약 (Chrome Built-in AI)</h2>
+          <span class="panel-badge">AI Summary</span>
+        </div>
+        <div id="aiSummaryContent" class="ai-summary-grid">
+          <div class="ai-loading">AI가 업무 내용을 요약하고 있습니다...</div>
+        </div>
+      </section>
+
+      <section class="panel panel-card reveal-on-scroll" aria-labelledby="allSectionTitle">
+        <div class="panel-header">
+          <h2 id="allSectionTitle">전체 업무 리스트</h2>
+          <span class="panel-badge" id="allPanelCount">0건</span>
+        </div>
+        <div class="table-wrap">
+          <div class="toolbar-block compact-bottom">
+            <div class="filter-grid">
+              <select id="filterTeam" class="field-control">
+                <option value="">전체 팀</option>
+                <option value="UXUI">UXUI</option>
+                <option value="영상">영상</option>
+                <option value="편집">편집</option>
+              </select>
+              <select id="filterAssignee" class="field-control">
+                <option value="">전체 담당자</option>
+              </select>
+              <select id="filterStatus" class="field-control">
+                <option value="">전체 상태</option>
+                <option value="progress">진행 중</option>
+                <option value="done">완료</option>
+                <option value="delay">지연</option>
+              </select>
+              <button id="toggleMyTasksButton" type="button" class="ghost-button">내 업무만 보기: 끔</button>
+            </div>
+          </div>
+          <div class="toolbar-block compact-bottom">
+            <form id="taskForm">
+              <div class="task-form-grid">
+                <input id="taskTitleInput" type="text" placeholder="제목" required class="field-control">
+                <select id="taskAssigneeInput" required class="field-control">
+                  <option value="">담당자 선택</option>
+                </select>
+                <input id="taskTeamInput" type="text" placeholder="팀 자동 설정" readonly class="field-control">
+                <select id="taskStatusInput" required class="field-control">
+                  <option value="progress">진행 중</option>
+                  <option value="done">완료</option>
+                  <option value="delay">지연</option>
+                </select>
+                <input id="taskProgressInput" type="number" min="0" max="100" placeholder="진행률" required class="field-control">
+                <button id="taskSubmitButton" type="submit" class="primary-button">업무 추가</button>
+              </div>
+              <input id="taskEditId" type="hidden">
+            </form>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>제목</th>
+                <th>담당자</th>
+                <th>팀</th>
+                <th>상태</th>
+                <th>진행률</th>
+                <th>관리</th>
+              </tr>
+            </thead>
+            <tbody id="taskBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel panel-card reveal-on-scroll" aria-labelledby="memberSectionTitle">
+        <div class="panel-header">
+          <h2 id="memberSectionTitle">팀원 리스트</h2>
+          <span class="panel-badge" id="memberPanelCount">0명</span>
+        </div>
+        <div class="table-wrap">
+          <div class="toolbar-block compact-bottom">
+            <form id="memberForm">
+              <div class="member-form-grid">
+                <input id="memberName" type="text" placeholder="이름" required class="field-control">
+                <input id="memberPosition" type="text" placeholder="직책" required class="field-control">
+                <select id="memberTeam" required class="field-control">
+                  <option value="">셀 선택</option>
+                  <option value="UXUI">UXUI</option>
+                  <option value="영상">영상</option>
+                  <option value="편집">편집</option>
+                </select>
+                <button id="memberSubmitButton" type="submit" class="primary-button">팀원 추가</button>
+              </div>
+              <input id="memberEditId" type="hidden">
+            </form>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>이름</th>
+                <th>직책</th>
+                <th>셀</th>
+                <th>관리</th>
+              </tr>
+            </thead>
+            <tbody id="memberBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

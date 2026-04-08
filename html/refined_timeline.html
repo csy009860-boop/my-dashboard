@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무 추진 현황 | 담당자별 타임라인</title>
+    <!-- Google Fonts for professional typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-navy: #1B305B;
+            --soft-gray: #F1F5F9;
+            --border-light: #E2E8F0;
+            --text-dark: #000000;
+            --text-muted: #64748B;
+            --accent-blue: #3B82F6;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Pretendard', sans-serif; 
+            background-color: var(--soft-gray); 
+            color: var(--text-dark);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            width: 300px;
+            background-color: var(--white);
+            border-right: 1px solid var(--border-light);
+            display: flex;
+            flex-direction: column;
+            z-index: 100;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.02);
+        }
+
+        .sidebar-header {
+            padding: 30px 20px;
+            border-bottom: 2px solid var(--primary-navy);
+            background-color: var(--white);
+        }
+
+        .sidebar-header h2 { 
+            font-size: 1rem; 
+            font-weight: 700; 
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        #project-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+        }
+
+        .project-item {
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .project-item:hover {
+            background-color: var(--soft-gray);
+            color: var(--accent-blue);
+        }
+
+        .project-item.active {
+            background-color: #EFF6FF;
+            color: var(--accent-blue);
+            border-color: #DBEAFE;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        #main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        header {
+            height: 80px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+            justify-content: space-between;
+        }
+
+        header h1 { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: var(--primary-navy);
+        }
+
+        #timeline-view {
+            flex: 1;
+            overflow-y: auto;
+            padding: 40px;
+            scroll-behavior: smooth;
+        }
+
+        /* Manager Group Section */
+        .manager-section {
+            margin-bottom: 50px;
+        }
+
+        .manager-label {
+            display: inline-block;
+            background: var(--primary-navy);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(27, 48, 91, 0.2);
+        }
+
+        /* Project Sub-Group */
+        .project-group {
+            margin-left: 20px;
+            border-left: 2px solid var(--border-light);
+            padding-left: 25px;
+            margin-bottom: 30px;
+        }
+
+        .project-title {
+            font-size: 0.8rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Task Card */
+        .task-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .task-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--accent-blue);
+        }
+
+        .task-content {
+            font-size: 1.3rem; /* 크기 확대 */
+            font-weight: 700; /* 아주 굵게 */
+            color: var(--text-dark); /* 순수 검정 */
+            margin-bottom: 18px;
+            line-height: 1.4;
+            display: block;
+        }
+
+        /* Meta Tags Area */
+        .task-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .meta-tag {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+            background-color: var(--soft-gray);
+            color: var(--text-muted);
+        }
+
+        .tag-project { background-color: #E0E7FF; color: #4338CA; } /* Indigo */
+        .tag-cell { background-color: #F1F5F9; color: #475569; } /* Slate */
+        .tag-hours { background-color: #DCFCE7; color: #166534; font-weight: 700; } /* Green */
+
+        /* Search Highlight */
+        .highlight-card {
+            border-color: var(--accent-blue);
+            background-color: #F0F9FF;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="sidebar-header">
+        <h2>프로젝트 필터</h2>
+    </div>
+    <div id="project-list">
+        <!-- Projects injected here -->
+    </div>
+</div>
+
+<div id="main-container">
+    <header>
+        <h1>담당자별 추진 업무 타임라인</h1>
+        <div id="date-info" style="font-size: 0.85rem; color: var(--text-muted);">
+            Data Updated: <span id="current-date"></span>
+        </div>
+    </header>
+
+    <div id="timeline-view">
+        <!-- Grouped Tasks injected here -->
+    </div>
+</div>
+
+<script>
+    let appData = null;
+
+    async function init() {
+        document.getElementById('current-date').innerText = new Date().toLocaleDateString();
+        
+        try {
+            const response = await fetch('reconstructed_data.json');
+            appData = await response.json();
+            
+            renderSidebar();
+            renderTimeline();
+        } catch (e) {
+            console.error("데이터를 불러올 수 없습니다.", e);
+            document.getElementById('timeline-view').innerHTML = "<h1>데이터 로딩 실패</h1>";
+        }
+    }
+
+    function renderSidebar() {
+        const list = document.getElementById('project-list');
+        list.innerHTML = `
+            <div class="project-item active" onclick="filterByProject(null, this)">
+                전체 프로젝트 보기
+            </div>
+        ` + appData.sidebar_projects.map(p => `
+            <div class="project-item" onclick="filterByProject('${p.replace(/'/g, "\\'")}', this)">
+                ${p}
+            </div>
+        `).join('');
+    }
+
+    function renderTimeline(filterProject = null) {
+        const view = document.getElementById('timeline-view');
+        view.innerHTML = '';
+
+        // Iterate Managers
+        Object.keys(appData.grouped_tasks).sort().forEach(manager => {
+            const projectsInManager = appData.grouped_tasks[manager];
+            
+            // Check if any task matches filter
+            let hasVisibleTasks = false;
+            if (!filterProject) hasVisibleTasks = true;
+            else if (projectsInManager[filterProject]) hasVisibleTasks = true;
+
+            if (!hasVisibleTasks) return;
+
+            const managerSection = document.createElement('div');
+            managerSection.className = 'manager-section';
+            managerSection.innerHTML = `<div class="manager-label">[담당자: ${manager}]</div>`;
+
+            // Iterate Projects under Manager
+            Object.keys(projectsInManager).forEach(project => {
+                if (filterProject && project !== filterProject) return;
+
+                const projectGroup = document.createElement('div');
+                projectGroup.className = 'project-group';
+                projectGroup.innerHTML = `<div class="project-title">${project}</div>`;
+
+                const tasks = projectsInManager[project];
+                tasks.forEach(task => {
+                    const card = document.createElement('div');
+                    card.className = `task-card ${filterProject ? 'highlight-card' : ''}`;
+                    card.id = `task-${encodeURIComponent(project)}`;
+                    
+                    card.innerHTML = `
+                        <span class="task-content">${task.content}</span>
+                        <div class="task-meta">
+                            <span class="meta-tag tag-project">${task.project}</span>
+                            <span class="meta-tag tag-cell">${task.cell}</span>
+                            <span class="meta-tag tag-hours">${task.hours}h</span>
+                        </div>
+                    `;
+                    projectGroup.appendChild(card);
+                });
+                managerSection.appendChild(projectGroup);
+            });
+            view.appendChild(managerSection);
+        });
+
+        if (view.innerHTML === '') {
+            view.innerHTML = '<div style="text-align:center; padding:100px; color:#64748B;">해당 프로젝트에 등록된 업무가 없습니다.</div>';
+        }
+    }
+
+    function filterByProject(projectName, element) {
+        // Sidebar active state
+        document.querySelectorAll('.project-item').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+
+        // Filter and Render
+        renderTimeline(projectName);
+
+        // Smooth Scroll to Top
+        document.getElementById('timeline-view').scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    init();
+</script>
+
+</body>
+</html>

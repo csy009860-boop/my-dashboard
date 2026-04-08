@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>업무 타임라인 대시보드</title>
+    <style>
+        :root {
+            --sidebar-width: 320px;
+            --primary-color: #4a90e2;
+            --bg-color: #f8f9fa;
+            --border-color: #dee2e6;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Sidebar: Project List */
+        #sidebar {
+            width: var(--sidebar-width);
+            background: white;
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        #sidebar h2 {
+            padding: 20px;
+            margin: 0;
+            background: var(--primary-color);
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        #project-list {
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .project-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .project-item:hover {
+            background-color: #f0f7ff;
+        }
+
+        .project-item.active {
+            border-left: 5px solid var(--primary-color);
+            background-color: #e6f0ff;
+        }
+
+        .project-item .code {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: bold;
+        }
+
+        .project-item .name {
+            display: block;
+            margin-top: 5px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .project-item .progress-container {
+            margin-top: 10px;
+            background: #eee;
+            height: 6px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .project-item .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+        }
+
+        /* Main: Timeline */
+        #main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            overflow-y: auto;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #333;
+        }
+
+        .timeline-container {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border-color);
+        }
+
+        .timeline-date-group {
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .date-badge {
+            position: absolute;
+            left: -40px;
+            width: 80px;
+            text-align: center;
+            background: white;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 5px 0;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .task-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        .task-card:hover {
+            transform: translateX(5px);
+        }
+
+        .task-card .project-tag {
+            font-size: 0.75rem;
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 4px;
+            color: #666;
+            margin-right: 10px;
+        }
+
+        .task-card .time-tag {
+            float: right;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .task-card .content {
+            display: block;
+            margin-top: 10px;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        .task-card .manager {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #999;
+            font-style: italic;
+        }
+
+        .hidden { display: none !important; }
+
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <h2>프로젝트 목록</h2>
+    <div id="project-list">
+        <!-- Projects will be injected here -->
+    </div>
+</div>
+
+<div id="main-content">
+    <header>
+        <h1 id="timeline-title">전체 업무 타임라인</h1>
+        <p id="timeline-subtitle">현재 진행 중인 모든 업무 내역입니다.</p>
+    </header>
+
+    <div class="timeline-container" id="timeline-view">
+        <!-- Timeline groups will be injected here -->
+    </div>
+</div>
+
+<script>
+    let appData = {
+        projects: [],
+        tasks: []
+    };
+
+    async function loadData() {
+        try {
+            const response = await fetch('data.json');
+            appData = await response.json();
+            renderProjects();
+            renderTimeline();
+        } catch (error) {
+            console.error("데이터 로딩 실패:", error);
+            document.body.innerHTML = "<h1>데이터 로딩 실패</h1><p>data.json 파일이 없거나 올바르지 않습니다.</p>";
+        }
+    }
+
+    function renderProjects() {
+        const list = document.getElementById('project-list');
+        list.innerHTML = `
+            <div class="project-item active" onclick="filterByProject(null, this)">
+                <span class="name">전체 보기</span>
+            </div>
+        `;
+
+        appData.projects.forEach(p => {
+            const item = document.createElement('div');
+            item.className = 'project-item';
+            item.onclick = (e) => filterByProject(p.code, item);
+            
+            const progress = parseInt(p.progress) || 0;
+            
+            item.innerHTML = `
+                <span class="code">${p.code}</span>
+                <span class="name">${p.name}</span>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: ${progress}%"></div>
+                </div>
+            `;
+            list.appendChild(item);
+        });
+    }
+
+    function renderTimeline(filterCode = null) {
+        const container = document.getElementById('timeline-view');
+        container.innerHTML = '';
+
+        // Filter tasks
+        const filteredTasks = filterCode 
+            ? appData.tasks.filter(t => t.project_code === filterCode)
+            : appData.tasks;
+
+        // Group by date
+        const grouped = {};
+        filteredTasks.forEach(t => {
+            if (!grouped[t.date]) grouped[t.date] = [];
+            grouped[t.date].push(t);
+        });
+
+        // Sort dates (descending)
+        const sortedDates = Object.keys(grouped).sort((a, b) => b.localeCompare(a));
+
+        sortedDates.forEach(date => {
+            const groupDiv = document.createElement('div');
+            groupDiv.className = 'timeline-date-group';
+            
+            groupDiv.innerHTML = `<div class="date-badge">${date}</div>`;
+            
+            grouped[date].forEach(task => {
+                const card = document.createElement('div');
+                card.className = 'task-card';
+                card.innerHTML = `
+                    <span class="time-tag">${task.hours}h</span>
+                    <span class="project-tag">${task.project_code}</span>
+                    <span class="content">${task.content}</span>
+                    <div class="manager">${task.manager} | ${task.project_name}</div>
+                `;
+                groupDiv.appendChild(card);
+            });
+            
+            container.appendChild(groupDiv);
+        });
+
+        if (sortedDates.length === 0) {
+            container.innerHTML = '<p>해당하는 업무 기록이 없습니다.</p>';
+        }
+    }
+
+    function filterByProject(code, element) {
+        // Active class toggle
+        document.querySelectorAll('.project-item').forEach(el => el.classList.remove('active'));
+        element.classList.add('active');
+
+        // Update Title
+        const title = document.getElementById('timeline-title');
+        title.innerText = code ? `[${code}] 업무 내역` : "전체 업무 타임라인";
+
+        renderTimeline(code);
+    }
+
+    // Initial load
+    loadData();
+</script>
+
+</body>
+</html>

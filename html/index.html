@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>업무 추진 현황 | 완벽 매핑 대시보드</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        :root { --sidebar-width: 340px; --stat-width: 380px; --primary-navy: #1e3a8a; --accent-green: #10b981; --bg-gray: #f8fafc; --text-black: #000000; --text-muted: #64748b; --border-color: #e2e8f0; --white: #ffffff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Pretendard', sans-serif; background-color: var(--bg-gray); display: flex; height: 100vh; overflow: hidden; }
+        
+        /* Sidebar */
+        #sidebar { width: var(--sidebar-width); background: var(--white); border-right: 1px solid var(--border-color); display: flex; flex-direction: column; }
+        .sidebar-header { padding: 30px 25px; border-bottom: 2px solid var(--primary-navy); }
+        .sidebar-header h2 { font-size: 1rem; font-weight: 700; color: var(--primary-navy); }
+        #project-list { flex: 1; overflow-y: auto; padding: 15px; }
+        .project-item { padding: 12px 15px; border-radius: 8px; margin-bottom: 5px; cursor: pointer; font-size: 0.9rem; color: var(--text-muted); transition: all 0.2s; border: 1px solid transparent; }
+        .project-item:hover { background: var(--bg-gray); color: var(--primary-navy); }
+        .project-item.active { background: #eff6ff; color: var(--primary-navy); border-color: #dbeafe; font-weight: 600; }
+        
+        /* Main */
+        #main-container { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+        header { padding: 20px 40px; background: var(--white); border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; }
+        #content-layout { display: flex; flex: 1; overflow: hidden; }
+        #timeline-view { flex: 1; overflow-y: auto; padding: 30px 40px; border-right: 1px solid var(--border-color); }
+        
+        /* Project Group Header */
+        .project-section { margin-bottom: 50px; }
+        .project-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 12px; border-bottom: 2px solid var(--primary-navy); margin-bottom: 20px; }
+        .project-header h3 { font-size: 1.15rem; font-weight: 700; color: var(--primary-navy); }
+        .project-total-hours { font-size: 0.9rem; font-weight: 700; color: var(--accent-green); background: #f0fdf4; padding: 2px 12px; border-radius: 20px; }
+
+        /* Task Card */
+        .task-card { background: var(--white); border-radius: 12px; padding: 20px; margin-bottom: 15px; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03); }
+        .task-content { font-size: 1.25rem; font-weight: 700; color: var(--text-black); margin-bottom: 15px; display: block; }
+        .task-meta { display: flex; gap: 10px; align-items: center; }
+        .tag { font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: var(--bg-gray); color: var(--text-muted); }
+        .tag-hours { background: #dcfce7; color: #166534; font-weight: 700; }
+        
+        /* Stats */
+        #stat-panel { width: var(--stat-width); background: var(--white); padding: 30px; overflow-y: auto; display: flex; flex-direction: column; gap: 30px; }
+        .chart-container { height: 220px; width: 100%; position: relative; }
+
+        /* AI Summary Styles */
+        #ai-summary-container { margin-bottom: 30px; display: none; }
+        .ai-summary-header { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; padding-bottom: 8px; border-bottom: 2px solid var(--primary-navy); }
+        .ai-summary-header h3 { font-size: 1rem; color: var(--primary-navy); }
+        .ai-badge { background: #dbeafe; color: #1e40af; font-size: 0.7rem; padding: 2px 8px; border-radius: 999px; font-weight: 700; }
+        .ai-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; }
+        .ai-card { background: #f0f9ff; border: 1px solid #bae6fd; border-radius: 12px; padding: 15px; }
+        .ai-card-cell { font-size: 0.85rem; font-weight: 700; color: #0369a1; margin-bottom: 8px; display: block; }
+        .ai-card-text { font-size: 0.9rem; line-height: 1.5; color: #334155; }
+        .ai-loading { text-align: center; padding: 20px; color: var(--text-muted); font-style: italic; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="sidebar-header"><h2>PROJECT LIST</h2></div>
+    <div id="project-list"></div>
+</div>
+
+<div id="main-container">
+    <header>
+        <h1>프로젝트별 추진 현황</h1>
+        <div class="date-filter">
+            <input type="date" id="start-date"> ~ <input type="date" id="end-date">
+        </div>
+    </header>
+
+    <div id="content-layout">
+        <div id="timeline-view"></div>
+        <div id="stat-panel">
+            <div class="stat-card"><h3>투입 비중</h3><div class="chart-container"><canvas id="pieChart"></canvas></div></div>
+            <div class="stat-card"><h3>인원별 시간</h3><div class="chart-container"><canvas id="barChart"></canvas></div></div>
+        </div>
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+    let currentFilter = null;
+    let pieChart = null, barChart = null;
+
+    function renderAll() {
+        const list = document.getElementById('project-list');
+        list.innerHTML = `<div class="project-item ${currentFilter === null ? 'active' : ''}" onclick="filterTasks(null, this)">전체 업무 현황</div>`;
+        DASHBOARD_DATA.projects.forEach(p => {
+            const item = document.createElement('div');
+            item.className = `project-item ${currentFilter === p.name ? 'active' : ''}`;
+            item.onclick = () => filterTasks(p.name, item);
+            item.innerText = p.name;
+            list.appendChild(item);
+        });
+
+        const view = document.getElementById('timeline-view');
+        const start = document.getElementById('start-date').value;
+        const end = document.getElementById('end-date').value;
+
+        const tasks = DASHBOARD_DATA.tasks.filter(t => 
+            (!start || t.date >= start) && (!end || t.date <= end) && 
+            (!currentFilter || t.project_name === currentFilter)
+        );
+
+        const grouped = {};
+        tasks.forEach(t => {
+            if (!grouped[t.project_name]) grouped[t.project_name] = { tasks: [], total: 0 };
+            grouped[t.project_name].tasks.push(t);
+            grouped[t.project_name].total += t.hours;
+        });
+
+        view.innerHTML = `
+            <div id="ai-summary-container">
+                <div class="ai-summary-header">
+                    <h3>Cell-based AI Summary</h3>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <button onclick="retryAiDetection()" id="ai-retry-btn" class="ai-badge" style="cursor: pointer; border: none; background: #3b82f6; color: white;">AI 엔진 재탐색</button>
+                        <span class="ai-badge">Powered by Chrome AI</span>
+                    </div>
+                </div>
+                <div id="ai-summary-content" class="ai-grid">
+                    <div class="ai-loading">AI 모델 응답을 대기 중입니다...</div>
+                </div>
+            </div>
+            <div id="project-timeline"></div>
+        `;
+        
+        const timeline = document.getElementById('project-timeline');
+        // ... (기존 timeline 렌더링 로직 동일) ...
+        Object.keys(grouped).sort().forEach(pName => {
+            const group = grouped[pName];
+            timeline.innerHTML += `
+                <div class="project-section">
+                    <div class="project-header"><h3>${pName}</h3><span class="project-total-hours">Total: ${group.total.toFixed(1)}h</span></div>
+                    ${group.tasks.sort((a,b) => b.date.localeCompare(a.date)).map(task => `
+                        <div class="task-card">
+                            <span class="task-content">${task.content}</span>
+                            <div class="task-meta">
+                                <span class="tag">Owner: ${task.manager}</span>
+                                <span class="tag">Cell: ${task.cell}</span>
+                                <span class="tag tag-hours">${task.hours}h</span>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        });
+        updateCharts(tasks);
+        updateAiSummaries(tasks);
+    }
+
+    let aiSummarizer = null;
+    let aiModel = null;
+    let detectionRetryCount = 0;
+
+    async function retryAiDetection() {
+        const btn = document.getElementById('ai-retry-btn');
+        btn.innerText = "탐색 중...";
+        detectionRetryCount = 0;
+        renderAll(); // 다시 렌더링하면서 감지 시도
+        btn.innerText = "AI 엔진 재탐색";
+    }
+
+    async function updateAiSummaries(tasks) {
+        const container = document.getElementById('ai-summary-container');
+        const content = document.getElementById('ai-summary-content');
+        
+        const cellGroups = {};
+        tasks.forEach(t => {
+            const cell = t.cell || "미지정";
+            if (!cellGroups[cell]) cellGroups[cell] = [];
+            if (t.content && !cellGroups[cell].includes(t.content)) cellGroups[cell].push(t.content);
+        });
+
+        const cells = Object.keys(cellGroups).filter(c => c !== "미지정" && cellGroups[c].length > 0);
+        if (cells.length === 0) {
+            container.style.display = 'none';
+            return;
+        }
+
+        container.style.display = 'block';
+
+        // [최종 병기] 모든 전역 AI 객체 및 하위 API 샅샅이 뒤지기
+        const aiEngine = window.ai || (typeof ai !== 'undefined' ? ai : null);
+        
+        if (!aiEngine && detectionRetryCount < 3) {
+            detectionRetryCount++;
+            content.innerHTML = `<div class="ai-loading">Gemini Nano 엔진 연결 시도 중... (${detectionRetryCount}/3)</div>`;
+            setTimeout(() => updateAiSummaries(tasks), 800);
+            return;
+        }
+
+        if (!aiEngine) {
+            renderFallbackSummary(cells, cellGroups, tasks, content, "AI 객체 미발견. 브라우저 콘솔에서 'ai' 또는 'window.ai'를 입력해 보세요.");
+            return;
+        }
+
+        try {
+            content.innerHTML = '<div class="ai-loading">Gemini Nano(v3Nano)가 직접 요약을 생성 중입니다...</div>';
+            const summaryCards = [];
+            
+            // 1. 모델 인스턴스 확보 (최신 명칭 우선순위)
+            if (!aiModel) {
+                // 최신 Canary 명칭: languageModel -> assistant -> summarizer 순
+                const modelCreator = aiEngine.languageModel || aiEngine.assistant || aiEngine.summarizer;
+                
+                if (modelCreator) {
+                    const caps = await modelCreator.capabilities();
+                    if (caps.available !== 'no') {
+                        // 요약 전용이 아니면 시스템 프롬프트로 요약가 역할 부여
+                        if (aiEngine.languageModel || aiEngine.assistant) {
+                            aiModel = await modelCreator.create({
+                                systemPrompt: "당신은 업무 요약 전문가입니다. 리스트를 보고 한국어 한 문장으로 간결하게 요약하세요."
+                            });
+                        } else {
+                            aiModel = await modelCreator.create({ type: 'tl;dr', length: 'short' });
+                        }
+                    }
+                }
+            }
+
+            if (!aiModel) {
+                renderFallbackSummary(cells, cellGroups, tasks, content, "모델 생성 실패. 'languageModel' 플래그가 켜져 있는지 확인해 주세요.");
+                return;
+            }
+
+            for (const cell of cells.slice(0, 4)) {
+                const titles = cellGroups[cell].slice(0, 10);
+                const prompt = `이 업무 리스트를 한국어 한 문장으로 요약해줘: ${titles.join(', ')}`;
+                
+                // 실행 메소드 확인 (prompt 또는 summarize)
+                let result = "";
+                if (aiModel.prompt) result = await aiModel.prompt(prompt);
+                else if (aiModel.summarize) result = await aiModel.summarize(prompt);
+
+                if (result) {
+                    summaryCards.push(`
+                        <div class="ai-card">
+                            <span class="ai-card-cell">${cell}</span>
+                            <div class="ai-card-text">${result.trim()}</div>
+                        </div>
+                    `);
+                }
+            }
+
+            if (summaryCards.length === 0) {
+                renderFallbackSummary(cells, cellGroups, tasks, content, "엔진 응답 없음 (모델 로드 상태 확인 필요)");
+            } else {
+                content.innerHTML = summaryCards.join('');
+            }
+
+        } catch (err) {
+            console.error("AI Error:", err);
+            renderFallbackSummary(cells, cellGroups, tasks, content, `실행 오류: ${err.message}`);
+        }
+    }
+
+    // AI가 안 될 때 보여줄 통계 요약 렌더링 함수
+    function renderFallbackSummary(cells, cellGroups, tasks, content, reason) {
+        const fallbackCards = [];
+        for (const cell of cells.slice(0, 4)) {
+            const titles = cellGroups[cell];
+            const totalHours = tasks.filter(t => (t.cell || "미지정") === cell).reduce((sum, t) => sum + (t.hours || 0), 0);
+            const mainTask = titles[0] || "업무 기록 없음";
+            
+            fallbackCards.push(`
+                <div class="ai-card" style="background: #fdfdfd; border-color: #e2e8f0; opacity: 0.8;">
+                    <span class="ai-card-cell">${cell} (통계 요약)</span>
+                    <div class="ai-card-text">
+                        총 ${titles.length}건의 업무(${totalHours.toFixed(1)}h)가 진행 중입니다. 
+                        주요 업무: <strong>${mainTask}</strong>
+                    </div>
+                </div>
+            `);
+        }
+        content.innerHTML = fallbackCards.join('') + `
+            <div style="grid-column: 1/-1; margin-top: 10px; font-size: 0.72rem; color: #94a3b8; text-align: center;">
+                * ${reason}
+            </div>
+        `;
+    }
+
+    function updateCharts(tasks) {
+        const isGlobal = (currentFilter === null);
+        const groupBy = isGlobal ? 'project_name' : 'manager';
+        const aggregated = {};
+        tasks.forEach(t => {
+            const key = t[groupBy] || '미지정';
+            aggregated[key] = (aggregated[key] || 0) + (parseFloat(t.hours) || 0);
+        });
+
+        const entries = Object.entries(aggregated).sort((a, b) => b[1] - a[1]);
+        const top5 = entries.slice(0, 5);
+        const others = entries.slice(5);
+
+        const labels = top5.map(e => e[0]);
+        const values = top5.map(e => e[1]);
+        const otherDetail = others.map(e => `${e[0]} (${e[1].toFixed(1)}h)`).join(', ');
+
+        if (others.length > 0) {
+            labels.push('기타');
+            values.push(others.reduce((sum, e) => sum + e[1], 0));
+        }
+
+        const colors = ['#1e3a8a', '#10b981', '#3b82f6', '#f59e0b', '#ef4444', '#8b5cf6'];
+
+        const pieCtx = document.getElementById('pieChart').getContext('2d');
+        if (pieChart) pieChart.destroy();
+        pieChart = new Chart(pieCtx, {
+            type: 'doughnut',
+            data: { labels: labels, datasets: [{ data: values, backgroundColor: colors }] },
+            options: { 
+                maintainAspectRatio: false, 
+                plugins: { 
+                    tooltip: { callbacks: { afterLabel: (ctx) => (ctx.label === '기타') ? otherDetail : '' } }
+                } 
+            }
+        });
+        const barCtx = document.getElementById('barChart').getContext('2d');
+        if (barChart) barChart.destroy();
+        barChart = new Chart(barCtx, {
+            type: 'bar',
+            data: { labels: labels, datasets: [{ label: '시간(h)', data: values, backgroundColor: '#3b82f6' }] },
+            options: { maintainAspectRatio: false, indexAxis: 'y' }
+        });
+    }
+
+    function filterTasks(name, element) { currentFilter = name; renderAll(); }
+    document.getElementById('start-date').value = new Date(new Date().setMonth(new Date().getMonth()-1)).toISOString().split('T')[0];
+    document.getElementById('end-date').value = new Date().toISOString().split('T')[0];
+    document.getElementById('start-date').addEventListener('change', renderAll);
+    document.getElementById('end-date').addEventListener('change', renderAll);
+    renderAll();
+</script>
+</body>
+</html>

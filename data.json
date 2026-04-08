@@ -1,0 +1,1742 @@
+{
+  "projects": [
+    {
+      "code": "BD-26-조사-01",
+      "name": "KNGIL",
+      "pm": "신혜영",
+      "status": "완료",
+      "progress": "100%",
+      "period": "12/22 ~ 03/20"
+    },
+    {
+      "code": "",
+      "name": "기획",
+      "pm": "개별 PM",
+      "status": "진행",
+      "progress": "70%",
+      "period": "03/01 ~ 03/19"
+    },
+    {
+      "code": "BT-26-용역-28",
+      "name": "경부선 노량..",
+      "pm": "신혜영",
+      "status": "진행",
+      "progress": "70%",
+      "period": "02/25 ~ 04/30"
+    },
+    {
+      "code": "BD-26-엔진-03",
+      "name": "EG-BIM..",
+      "pm": "정은혜",
+      "status": "대기",
+      "progress": "90%",
+      "period": "01/02 ~ 03/31"
+    },
+    {
+      "code": "",
+      "name": "UX",
+      "pm": "신혜영",
+      "status": "대기",
+      "progress": "50%",
+      "period": "05/13 ~ 03/31"
+    },
+    {
+      "code": "BD-26-운영-13",
+      "name": "한맥가족 배움터",
+      "pm": "정은혜",
+      "status": "진행",
+      "progress": "80%",
+      "period": "11/05 ~ 03/13"
+    },
+    {
+      "code": "BD-26-활용-08",
+      "name": "Domainer",
+      "pm": "정은혜",
+      "status": "진행",
+      "progress": "10%",
+      "period": "11/05 ~ 05/15"
+    },
+    {
+      "code": "",
+      "name": "편집",
+      "pm": "윤봄이",
+      "status": "진행",
+      "progress": "90%",
+      "period": "02/23 ~ 03/27"
+    },
+    {
+      "code": "BD-26-조사-01",
+      "name": "KNGIL",
+      "pm": "이예진",
+      "status": "보류",
+      "progress": "10%",
+      "period": "03/03 ~ 05/15"
+    },
+    {
+      "code": "",
+      "name": "편집",
+      "pm": "이름",
+      "status": "진행",
+      "progress": "10%",
+      "period": "03/09 ~ 03/30"
+    },
+    {
+      "code": "",
+      "name": "편집",
+      "pm": "이름",
+      "status": "진행",
+      "progress": "10%",
+      "period": "03/23 ~ 03/27"
+    },
+    {
+      "code": "",
+      "name": "3D/영상",
+      "pm": "박지영",
+      "status": "보류",
+      "progress": "70%",
+      "period": "12/10 ~ 03/31"
+    },
+    {
+      "code": "",
+      "name": "3D/영상",
+      "pm": "김태식",
+      "status": "대기",
+      "progress": "30%",
+      "period": "12/08 ~ 03/31"
+    },
+    {
+      "code": "",
+      "name": "3D/영상",
+      "pm": "최영환",
+      "status": "진행",
+      "progress": "10%",
+      "period": "01/19 ~ 04/30"
+    }
+  ],
+  "tasks": [
+    {
+      "date": "2026.02.01",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.02",
+      "project_code": "BM-00-경영-04",
+      "project_name": "운영지원(총무)",
+      "content": "e.홍보",
+      "manager": "바론 홈페이지 \"홍보센터\" 퍼블리싱 - 뉴스 (50%) - 뉴스 보기 (완료) - CI (완료) - 브로슈어 (완료)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.02",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "통합로그인 수정사항 반영",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.03",
+      "project_code": "BM-00-경영-04",
+      "project_name": "운영지원(총무)",
+      "content": "e.홍보",
+      "manager": "바론 홈페이지 퍼블리싱 완료 - 뉴스 메인 완료",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.03",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "기획회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.04",
+      "project_code": "BM-00-경영-04",
+      "project_name": "운영지원(총무)",
+      "content": "e.홍보",
+      "manager": "바론 홈페이지 홍보센터 반응형 - 뉴스 완료 - 브로슈어 완료 - CI 작업중",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.04",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "수정사항 반영및 서비스 바로가기 버튼 추가",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.05",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "기획내용 확인및 아이디어 도출",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.05",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "아이콘 및 버튼 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.06",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 기획 회의및 로고 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.06",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "큰길 메인 \"k\" 이미지수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.07",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.08",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.09",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 로고 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.10",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 로고디자인 및 프로젝트관리 내용확인 시안작업",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.11",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 보상관리 기획내용확인및 시안구상",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.11",
+      "project_code": "BD-26-엔진-03",
+      "project_name": "EG-BIM..",
+      "content": "m.UX디자인",
+      "manager": "profilesweep 팝업 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.12",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "마이클래스 모바일 화면 디자인 시안작업",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.12",
+      "project_code": "BD-26-엔진-03",
+      "project_name": "EG-BIM..",
+      "content": "m.UX디자인",
+      "manager": "PROFILESWEEP 팝업 수정사항 반영",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.13",
+      "project_code": "BG-00-공통-04",
+      "project_name": "휴가",
+      "content": "휴가",
+      "manager": "연차(배우자의라식수술로인한보호자역할)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.14",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.15",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.16",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.17",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.18",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.19",
+      "project_code": "BG-00-공통-04",
+      "project_name": "휴가",
+      "content": "휴가",
+      "manager": "연차(임시로지정한날짜를변경)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.20",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 마이클래스 모바일 화면 디자인 시안작업 - 학습하기 수정사항 반영 - 목표설정하기 모바일 디자인 완료 - 학습완료 모바일 디자인 완료 - 추천목표설정 모바일 디자인 완료 - 추가목표설정 후 학습 디자인 진행중",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.20",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "보상관리 화면 레이아웃 구상",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.21",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.22",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.23",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 마이클래스 모바일화 반응형 진행",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.24",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 마이클래스 모바일 화면 디자인 시안작업 - 마이클래스 각페이지 수정사항반영",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.24",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "메뉴 디자인 스타일 작업",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.25",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 메뉴 스타일 시안 작업",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.25",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인 기획팀 회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.26",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "y.회의",
+      "manager": "도메이너 메뉴 스타일 시안 작업 ( 90%완료)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.26",
+      "project_code": "BM-00-경영-04",
+      "project_name": "운영지원(총무)",
+      "content": "e.홍보",
+      "manager": "바론 홈페이지에 영문 브로슈어 업데이트",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.27",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "- 메뉴 스타일 디자인 완성 (1시간) - 도메이너 조사·협의 관리 페이지 작업시작(30%)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.27",
+      "project_code": "BM-00-경영-04",
+      "project_name": "운영지원(총무)",
+      "content": "p.PQ 및 입찰 수행",
+      "manager": "수행가능한 공모전및 입찰 목록 써치",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.02.28",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.01",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.01",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.01",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.02",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.02",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.02",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.03",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-검색 페이지 모바일 화면 디자인 피드백이후 검색->검색결과 화면 레퍼런스 조사 -배움터 모바일 버전 화면 추가 및 정리 온보딩 퍼즐 단계별 화면, 법정의무교육 완료 화면. -리더십 pc화면 시안 디자인",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.03",
+      "project_code": "BG-00-공통-04",
+      "project_name": "휴가",
+      "content": "휴가",
+      "manager": "연차(자녀어린이집입학으로인한연차변경)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.03",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"민원관리\" 페이지 : 기획안 확인 및 아이디어 -\"로그인\"페이지 : 메인 비주얼 이미지 수정 -버튼 UI 디자인 시안 -토글 UI 디자인 시안",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.04",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-배움터 마이페이지 모바일 화면 디자인 (아코디언 버전, 학습시간 팝업) -리더십 페이지 PC화면 디자인 (메인 배너, 탭 디자인 완료)",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.04",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "조사 협의 관리 페이지 디자인 완료및 시안 전달 보상현황 레이아웃 구상및 아이디어 도출",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.04",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "알림툴팁 디자인 추가",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.04",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상기준절차\" 페이지 : 디자인 시안 -탭 UI 디자인 시안",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.05",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 리더십, 인사이트 화면 디자인 -인사이트, 리더십 메인 배너 제작, 탭 디자인 통일 작업 -인사이트, 리더십 모바일 화면 바레이션",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.05",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "큰길 오픈 포스터 디자인 (ev용 바레이션, qr코드 변환)",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.05",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 도메이너 - 조사 협의 관리 뷰&수정 페이지 수정사항 반영 - 민원 관리 수정 페이지 레이아웃 구성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.05",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"사업정보관리\" 페이지 : 편집모드 디자인 수정 -\"민원관리\" 페이지 : 탭 ui 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.06",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-인사이트, 리더십 모바일 화면 피드백 반영 수정 작업 -마이페이지 모바일 피드백 반영 수정작업 -마이클래스 학습완료 책장 후광 효과 시안 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.06",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 디자인 작업 - 조사협의관리 뷰어 페이지 디자인 완료 - 조사협의관리 절차 입력페이지 수정사항 반영 완료 - 메뉴 아이콘 수정 (보상기준절치 / 프로젝트 관리)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.06",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"사업정보관리\" 페이지 : 뷰어모드 디자인 시안 -\"사업정보관리\" 페이지 : 편집모드 디자인 수정 -\"민원관리\" 페이지 : 탭 ui 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.07",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.07",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.07",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.08",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.08",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.08",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.09",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-마이페이지, 리더십, 인사이트 모바일 페이지 피드백 반영 수정(1차 완료) -마이클래스 책장 후광 효과 퍼블리싱 확인후 시안 수정 -마이클래스 기획 번경 반영한 1~4분기 탭, 플로팅 버튼 시안 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.09",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "기획서 수정 반영 메인 영상 PSD파일 수정, 이미지 리사이즈 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.09",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 도메이너 디자인 - 민원 관리 리스트 레이아웃 구상 - 민원 관리 전체 페이지 내용 정리 - 버튼및 드롭박스 등 에셋 이미지 스타일 정리",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.09",
+      "project_code": "BF-26-설계-04",
+      "project_name": "서산~명천..",
+      "content": "n.3D디자인",
+      "manager": "-영상 위치 태그 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.09",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "-홈페이지 상세페이지 : 텍스트 및 이미지 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.10",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-마이페이지 탭 디자인 수정 -마이클래스 앵커 링크 메뉴 디자인 -마이클래스 학습하기 책장 후광 효과 퍼블리싱 확인후 수정",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.10",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "큰길 기획3차 검토 내용 모바일 화면 반영",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.10",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 보상기준 절차-보상기본사항 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.10",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 도메이너 디자인 - 위치기반 기본UI 디자인 - 조사협의관리 퍼블리싱 페이지 QA (1시간 30분)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.10",
+      "project_code": "BT-26-용역-28",
+      "project_name": "경부선 노량..",
+      "content": "n.3D디자인",
+      "manager": "-영상 위치 태그 디자인 : 레이아웃 스타일/시차:병원(09시~10시)[1H]",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.10",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-공통 페이지 : 타이틀 불릿 스타일 시안",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.11",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "보상 기준, 절차 페이지 작업 -보상기본 사항, 보상절차 화면 다이어그램 표 디자인 -보상종류 화면 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.11",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "마이클래스 기획 변경, 모바일화면 적용",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.11",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 디자인 - 위치기반 페이지 디자인 (90%완료) - 조사협의관리 간격 맞추기 (1시간) - 디자이팀 회의 (30분)",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.11",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"프로젝트 관리\" 페이지 : 퍼블리싱 오류 확인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.11",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인팀 정기 회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.11",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"프로젝트 관리\" 페이지 : 하위 페이지의 여백 통일",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.12",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "보상 기준, 절차 페이지 작업 -보상기본 사항, 보상절차 화면 다이어그램 표 디자인 -보상종류 화면 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.12",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 디자인 - 위치기반 페이지 디자인 (시안완료 및 수정사항 반영) - 프로젝트관리 페이지 간격 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.12",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "총괄기획실 세미나",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.12",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"회원가입\" 페이지 : 플로우 스타일 정리",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "보상기준 절차 8가지 탭별 화면 디자인 -보상 기본사항 , 보상절차, 보상종류 - 피드백 반영 수정 (1차 완료) -권리구제, 잔여지 매수기준, 이의제기 및 구제절차, 관련법령, 담당연락차 화면 디자인",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BD-26-운영-07",
+      "project_name": "ERP: 바론",
+      "content": "m.UX디자인",
+      "manager": "홍보센터 가족사 브로슈어 영문 업로드",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BD-26-운영-06",
+      "project_name": "ERP: 한맥",
+      "content": "m.UX디자인",
+      "manager": "홍보센터 가족사 브로슈어 국/영 신규 업로드",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 도메이너 - 위치기반 페이지 디자인 1차 완료 - 위치기반 페이지 컴포넌트 정리 - 위치기반 페이지 에셋 완료",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"회원가입\" 페이지 : 레이아웃 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "a.조직운영/팀관리",
+      "manager": "-나라장터 uxui 입찰 공고 확인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.13",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "-파비콘 제작",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.14",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.14",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.14",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.15",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.15",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.15",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "보상기준 절차 탭별 화면 디자인 -보상기존사항/보상절차/보상종류 피드백 반영 수정 작업 -권리구재/잔여지 매수기준/이의제기 및 구제절차/관련법령/담당연락처-1차 시안 완료",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BS-26-기획-07",
+      "project_name": "바론 SW 포탈",
+      "content": "m.UX디자인",
+      "manager": "홍보센터 영문 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 도메이너 - 위치기반 페이지 디자인 컬러 통일 작업 - 세부 컴포넌트 작업 - 필지분석 / 범례 3종 / - 아이콘 추가 작업",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-공통: 알림창 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "-파비콘 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "a.조직운영/팀관리",
+      "manager": "-소싱플랫폼 uxui 입찰 공고 확인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.16",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "-인트라넷 공지사항 팝업 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.17",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "보상기준 절차 탭별 화면 디자인-완료 -보상절차, 권리구제 및 관려법령-피드백 반영 수정 작업 -기존 시안 back 정리 및 화면 정리",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.17",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 마이페이지 레벨 표시 화면 디자인 정리",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.17",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "pc,mob 퍼블리싱 화면 QA 화면 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.17",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 도메이너 - 위치기반 페이지 디자인 수정사항 반영및 시안제작",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.17",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-공통: 인풋 스타일 디자인 정리 -\"보상관리\" 페이지 : 기획서 검토",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.17",
+      "project_code": "BT-26-용역-28",
+      "project_name": "경부선 노량..",
+      "content": "n.3D디자인",
+      "manager": "-위치 태그 디자인 수정 및 추가",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.18",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "대시보드형 보고 화면 제작 (AI 활용) -레펀런스 조사 및 개발 언어 조사",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.18",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 위치기반 페이지 작업 - 수정사항 반영및 시안 작업 - 보조기능 표현방법에 대한 아이디어 도출",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.18",
+      "project_code": "BT-26-용역-28",
+      "project_name": "경부선 노량..",
+      "content": "m.UX디자인",
+      "manager": "-위치 태그 디자인 스타일 추가 및 아이콘 생성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.18",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "-\"구매하기\"페이지 : 에러리스트 내용 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "대시보드형 보고 화면 제작 (AI 활용) -피그마make활용 대시보드 제작 -PM 보고용 화면 정리 및 업로드",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인기획팀 실장님 회의 참석",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "홈페이지 온보딩 화면 레퍼런스 조사",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "로그인페이지 다지인 사인 작업 완료",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "위치기반 페이지 추가시안 작업및 디자인 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상관리\" 페이지 : 기획서 검토",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.19",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상관리\" 페이지 : 기획서 확인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BD-26-조사-01",
+      "project_name": "KNGIL",
+      "content": "m.UX디자인",
+      "manager": "홈페이지 온보딩 화면 디자인 -광고, 재미 요소 아이디어 리서치 -온보딩 화면 정리 -온보딩 모바일 화면 바레이션",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "대시보드형 보고 화면 제작",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자기획팀 회의 참석(기술기회팀 대시보드 설명)",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "로그인페이지 디자인 수정사항 반영완료",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "AI 업무 대시보드 관련 회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "위치기반 서비스 수정사항 반영",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상관리\" 페이지 : 기획서 검토 -\"인트로\"페이지 : 레이아웃 및 배경이미지 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.20",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "-대시보드 회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.21",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.21",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.21",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.22",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.22",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.22",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.23",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "디자인기획팀 업무 보고 대시보드 제작 -피그마 make 활용 작업 메인, 업무 상세보기 페이지 바이브 코딩작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.23",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "농정원 제안서 작성",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.23",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "농정원 기관 홈페이지 운영 및 활용 강화 제안서 작성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.23",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "농정원 기관 홈페이지 운영 및 활용강화 제안서 작성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.23",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "-\"농정원\" 홈페이지 제안서 초안 작성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "업무 보고용 대시보드 작업 -리액트 파일 -> html+css 변환 테스트 작업 -프로젝트 셀별 취합 리스트 작성",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인팀 업무회의",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 위치기반 페이지 수정사항 반영",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인 팀회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "도메이너 자체 회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"조사협의관리\" 입력 페이지 : 인풋 스타일 추가 및 변경 -\"보상관리\" 페이지 : 기획서 검토",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BT-26-용역-28",
+      "project_name": "경부선 노량..",
+      "content": "m.UX디자인",
+      "manager": "-위치태그 아이콘 수정 및 시안A 최종본 전달",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "-4.2 대시보드 회의 : 기획서 작성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.24",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "-디자인팀 정기회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.25",
+      "project_code": "BD-26-조사-05",
+      "project_name": "GAIA",
+      "content": "m.UX디자인",
+      "manager": "홈페이지 피그마 원본->psd파일 변환 작업 -디지털 혁신 페이지 -진행중",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.25",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "업무 보고용 대시보드 작업 -대시보드 깃허브 페이지 생성 -vs코드 codex바이브 코딩 환경 셋팅 -셀장님들 피드백 반영 프로젝트 최종본 정리",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.25",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 위치기반 페이지 - 수정사항 반영 - 좌측 메뉴 UX구조 개편",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.25",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "로그인 페이지 수정사항 반영",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.25",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "로그인 페이지 모바일 환경 디자인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.25",
+      "project_code": "BD-26-조사-05",
+      "project_name": "GAIA",
+      "content": "m.UX디자인",
+      "manager": "-영상용 psd 생성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.26",
+      "project_code": "BD-26-조사-05",
+      "project_name": "GAIA",
+      "content": "m.UX디자인",
+      "manager": "홈페이지 피그마 원본->psd파일 변환 작업 -디지털 혁신 페이지 -완료 -성과품 페이지-완료",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.26",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "f.가족사지원",
+      "manager": "한맥빌딩 회의실 이미지 변경",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.26",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "프로젝트 취합 및 csv 파일 변환 작업",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.26",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 위치기반 페이지 수정사항 반영 및 기획팀 공유",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.26",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "-홈페이지 템플릿화 개발 모색/시차:개인사유(16시~18시)[2H]",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.26",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-학습목표 타이틀 아이콘 시안",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-배움터 모바일 화면 레이아웃 정리(폰트 컬러, 일러스트) -배움터 파비콘 제작 -프로필사진 기존 이미지 제작",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "f.가족사지원",
+      "manager": "-한맥빌딩 회의실 2층 교육실->레퍼런스룸 명칭 변경",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "대시보드 화면 분석(도메이너를 기준으로 주간 업무 보고 방안)",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 위치기반 페이지 - 컬러픽커 디자인 시안 작업 - 물건 표출 목록 (건축물,수목,기타) 아이콘 작업 - 범례에 포함된 아이콘 작업 - lnb 체크박스 수정",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "프로젝트 보고용 대시보드 기획",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상관리\" 페이지 : 기획서 검토",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-2분기 학습목표 아이콘 변경",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "-4.2 대시보드 : 기획서 작성",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.27",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "a.조직운영/팀관리",
+      "manager": "-1분기 ebi",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.28",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.28",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.28",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.29",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.29",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.29",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.30",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "대시보드 화면 구성 기획 -분기별 구글 시트 항목 분석",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.30",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인팀 업무회의 참석",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.30",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "위치기반페이지 - 물건 아이콘 수정및 체크박스 디자인 시안 완료 - 측정기능 드래그 아이콘 시안 완료",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.30",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "AI 바이브코딩을 위한 대시보드 기획",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.30",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "d.내부 회의",
+      "manager": "디자인팀 회의",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.30",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상관리\" 페이지 : 기획서 검토",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-에러리스트 작성 및 프로필사진 수정 버튼 디자인",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "z.AI/기타",
+      "manager": "대시보드 피드백 반영 기획서 화면 제작",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "e.내부 세미나",
+      "manager": "총괄기획실 세미나",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "위치기반페이지 - 보상현황 리스트 수정사항 반영 - 퍼블리싱 화면 QA",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BS-26-기획-08",
+      "project_name": "사전기획(사..",
+      "content": "m.UX디자인",
+      "manager": "바이브 코딩을 활용한 보고용 대시보드 기획",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "e.내부 세미나",
+      "manager": "총괄기획실 세미나",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 화면및 기능 QA",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "-홈페이지 에러 확인",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BG-00-공통-20",
+      "project_name": "공통",
+      "content": "e.내부 세미나",
+      "manager": "-바이브코딩 세미나",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.03.31",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "-\"보상관리\"페이지 : 기획시안",
+      "hours": "UX셀"
+    },
+    {
+      "date": "2026.04.01",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "도메이너 민원 기획확인 및 디자인",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.02",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "ㅁ 민원관리 - 민원 리스트 디자인및 수정 - 민원정보 영역 디자인",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.02",
+      "project_code": "BD-26-운영-13",
+      "project_name": "한맥가족 배움터",
+      "content": "m.UX디자인",
+      "manager": "배움터 이미지 수정사항 반영",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.03",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "민원관리 페이지 디자인",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.04",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.05",
+      "project_code": "",
+      "project_name": "",
+      "content": "",
+      "manager": "",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.06",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "민원 관리페이지 디자인 - 접수 입력 / 뷰 페이지 (1차시안 전달) - 검토 입력 / 뷰 페이지 (1차시안 전달) - 협의 입력 / 뷰 페이지 (20% 완료) - 종결 입력 / 뷰 페이지 (1차시안 전달)",
+      "hours": "ux셀"
+    },
+    {
+      "date": "2026.04.07",
+      "project_code": "BD-26-활용-08",
+      "project_name": "Domainer",
+      "content": "m.UX디자인",
+      "manager": "민원 관리페이지 디자인 - 접수 입력 / 뷰 페이지 (1차시안 전달) - 검토 입력 / 뷰 페이지 (1차시안 전달) - 협의 입력 / 뷰 페이지 (20% 완료) - 종결 입력 / 뷰 페이지 (1차시안 전달)",
+      "hours": "ux셀"
+    }
+  ]
+}
